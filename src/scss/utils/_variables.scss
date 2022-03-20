@@ -1,0 +1,41 @@
+// HexToRGB
+@function hexToRgb($hex) {
+    @return red($hex), green($hex), blue($hex);
+}
+
+//ПЕРЕМЕННЫЕ>
+
+//РАЗМЕРЫ СЕТКИ
+
+$minwidth: 320px;
+$mw: 1820 + 30;
+$md1: $mw + 12;
+$md2: 992.98;
+$md3: 767.98;
+$md4: 479.98;
+
+//РАЗМЕРЫ СЕТКИ
+
+//ПЕРЕМЕННЫЕ ПО УМОЛЧАНИЮ
+
+$colors : (
+    'light': #fff,
+    'black' : #000,
+    'page-bg' : #fff,
+);
+
+:root {
+    @each $key, $value in $colors {
+        --color-#{$key} : #{$value};
+    }
+
+    @each $key, $value in $colors {
+        --color-#{$key}-rgb : #{hexToRgb($value)};
+    }
+
+    --transition-time: 0.3s;
+}
+
+//ПЕРЕМЕННЫЕ ПО УМОЛЧАНИЮ
+
+//</ПЕРЕМЕННЫЕ>
